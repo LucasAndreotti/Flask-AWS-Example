@@ -21,7 +21,7 @@ def upload_page():
             "name": output,
             "date": int(time())
         }
-        flash('{src} uploaded to S3 as {dst}'.format(src=form.example.data.filename, dst=output))
+        flash('LUCASlucasLUCAS {src} uploaded to S3 as {dst}'.format(src=form.example.data.filename, dst=output))
         dynamodb_put_item(item)
     entries = dynamodb_scan()
     return render_template('example.html', form=form, entries=entries)
