@@ -17,7 +17,7 @@ def upload_page():
     if form.validate_on_submit():
         output = s3_upload(form.example)
         item = {
-            "image_url": "https://s3.amazonaws.com/" + app.config["S3_BUCKET"] + "/" + output,
+            "image_url": "https://s3.amazonaws.com/" + app.config["infra-ti-s3"] + "/" + output,
             "name": output,
             "date": int(time())
         }
